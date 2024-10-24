@@ -20,7 +20,7 @@
 
 ## 模型的选择
 * 常见的神经网络模型对于这种问题的表格型数据在我的试验中表现得并不优秀，放弃使用NN相关的算法，转而选择GBDT系列的相关算法。
-* 根据Disscussion提供的数据(如下图)和我本地使用optuna不断超参数调优，LightGBMRegressor表现优异。
+* 根据Disscussion提供的数据(如下图)和我本地使用optuna对不同模型对比不断超参数调优，LightGBMRegressor确实表现优异。
 
 <img width="175" alt="104064504f46313c541fdb4cd20d644" src="https://github.com/user-attachments/assets/f3db1ed5-8d34-471b-88d7-e5c2ef597eca">
 
