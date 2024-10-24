@@ -24,3 +24,13 @@
 
 <img width="175" alt="104064504f46313c541fdb4cd20d644" src="https://github.com/user-attachments/assets/f3db1ed5-8d34-471b-88d7-e5c2ef597eca">
 
+## 模型的介绍
+
+## 模型的训练与评估
+* 用optuna得到的最好超参数加到LightGBM模型中，将原有的数据分割为训练集与测试集，设置比例为3：7。
+* 将训练集用于全新的模型训练，将测试集测试得到的最优结果Root Mean Squared Error (RMSE): 0.6417039593649891
+* 通过查看模型的特征重要性可以对模型进行进一步的改善和优化。
+
+<img width="886" alt="94b6f67dc418a0258ad85d7eafe4e8e" src="https://github.com/user-attachments/assets/24ec93f8-b09a-4c11-9b04-547a1459e6bd">
+
+<img width="874" alt="f160e367116e3f78b4af5c03c4789e1" src="https://github.com/user-attachments/assets/cd9adbe2-dd43-4f14-99da-279d30cd8c14">
