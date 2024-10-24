@@ -1,4 +1,4 @@
-<img width="660" alt="85a9238a41e2cb26894a2cdafad599b" src="https://github.com/user-attachments/assets/36176a75-7d49-46a4-8b9f-a9b755abb09b"># 电计2203 符煜非 20221071292
+# 电计2203 符煜非 20221071292
 # 问题
 ## 问题描述:
 * 将写作过程的具体与写作质量联系起来，使用打字行为来预测论文质量，评价指标使用均方根误差RMSE评估。
