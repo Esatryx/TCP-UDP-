@@ -39,3 +39,8 @@
 <img width="886" alt="94b6f67dc418a0258ad85d7eafe4e8e" src="https://github.com/user-attachments/assets/24ec93f8-b09a-4c11-9b04-547a1459e6bd">
 
 <img width="874" alt="f160e367116e3f78b4af5c03c4789e1" src="https://github.com/user-attachments/assets/cd9adbe2-dd43-4f14-99da-279d30cd8c14">
+
+## 总结
+* 模型在预测低分数论文与高分数论文的表现并不相同。低分可能不是由于糟糕的 “类型技巧” 造成的。由于论文是根据其内容进行评分的，因此偏离主题的答案或不易发现的语法错误可能会被扣分。是否应该过度关注文本可能蕴藏的内容有所探究。
+* 甚至在把匿名文本q字符转换为aa会显著提高模型的表现令我费解。
+* 对于论文评分的主观性，我认为RMSE可能不是一个最佳的指标选择。
