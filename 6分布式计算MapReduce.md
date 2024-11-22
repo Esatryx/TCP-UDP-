@@ -157,10 +157,11 @@
     * cluster center
     * 属于该cluster center的数据点的个数
 
- <img width="654" alt="fc213c347d6faece9635d88e015d7ec" src="https://github.com/user-attachments/assets/ccc2d8d4-a824-4a8b-bb1a-9337b1a9907f">
+
 
 <img width="654" alt="fc213c347d6faece9635d88e015d7ec" src="https://github.com/user-attachments/assets/47b76b8c-1be9-412f-a99b-ff803c16bdd8">
 
 <img width="655" alt="274a1cb7d3d28f956c37c4a9b9d510a" src="https://github.com/user-attachments/assets/3e25d30f-7a6c-4ebf-8035-47c299bbbde2">
 
 <img width="632" alt="3114de411ad2f7a3e00c4dbd02c5323" src="https://github.com/user-attachments/assets/8c140878-1001-451d-93b2-f368da99c469">
+
