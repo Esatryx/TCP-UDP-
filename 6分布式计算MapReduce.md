@@ -121,4 +121,46 @@
 ## K-Means算法MapReduce化
 <img width="648" alt="d751575f7415d5d64e6e1980a71cb94" src="https://github.com/user-attachments/assets/5dca91b9-75ad-4154-9347-1840a8b39e5d">
 
+* 令 k = 2，欲生成 cluster-0 和 cluster-1
+* 随机选取A(1,1)作为cluster-0的中心，C(4,3)作为cluster-1的中心
+* 假定将所有数据分布到2个节点 node-0 和 node-1 上,即node-0 ：A(1,1)和C(4,3)，node-1 ：B(2,1)和D(5,4)
+* 首先创建一个存储聚类中心的全局文件
 
+<img width="628" alt="90fd2768b0a28e88152faa4c9a85228" src="https://github.com/user-attachments/assets/cff343c2-0f01-46a8-ae7b-75373b4128da">
+
+
+* Map阶段：
+  * 每个节点读取全局文件，以获得上一轮迭代生成的cluster centers等信息
+  * 计算本节点上的每一个点到各个cluster center的距离
+  * 对于每一个数据点，可以得到<cluster assigned to , 数据点自身>
+
+<img width="643" alt="a9390e1d6f511e3852c67b34fb9291e" src="https://github.com/user-attachments/assets/21016a19-aa98-46a2-a901-aefe56476154">
+
+
+* Combine阶段：
+  * 利用combiner减少map阶段产生的大量数据
+  * Combiner计算统一簇中所有数据点的均值，以及这些数据点的个数
+  * 然后，为每一个cluster发送 key-value pair
+    * key - cluster id,
+    * value -【 # of data points of this cluster， mean】
+
+<img width="659" alt="6738a91dec9ac44221eded3f3d912f9" src="https://github.com/user-attachments/assets/d9562567-39be-4924-9d48-0483951388e9">
+
+
+* Reduce阶段：
+  * 由于map阶段产生的key是cluster-id，所以每个 cluster的全部数据将被发送同一个reducer，包括：
+    * 该cluster 的id
+    * 该cluster的数据点的均值，及对应于该均值的数据点的个数
+  * 然后经计算后输出
+    * 当前的迭代计数
+    * cluster id
+    * cluster center
+    * 属于该cluster center的数据点的个数
+
+ <img width="654" alt="fc213c347d6faece9635d88e015d7ec" src="https://github.com/user-attachments/assets/ccc2d8d4-a824-4a8b-bb1a-9337b1a9907f">
+
+<img width="654" alt="fc213c347d6faece9635d88e015d7ec" src="https://github.com/user-attachments/assets/47b76b8c-1be9-412f-a99b-ff803c16bdd8">
+
+<img width="655" alt="274a1cb7d3d28f956c37c4a9b9d510a" src="https://github.com/user-attachments/assets/3e25d30f-7a6c-4ebf-8035-47c299bbbde2">
+
+<img width="632" alt="3114de411ad2f7a3e00c4dbd02c5323" src="https://github.com/user-attachments/assets/8c140878-1001-451d-93b2-f368da99c469">
